@@ -2,13 +2,13 @@ import nltk
 
 nltk.download('popular')
 from nltk.stem import WordNetLemmatizer
-
+from flask import Flask, render_template, request
 lemmatizer = WordNetLemmatizer()
 import pickle
 import numpy as np
 from keras.models import load_model
 
-model = load_model('/Users/harshkesarwani/Desktop/Test/proh/model.h5')
+model = load_model(r'C:\Users\nisht\Sagacity-HealthBot\Sagacity-A-HealthBot\proh\model.h5')
 import json
 import random
 
@@ -25,9 +25,9 @@ Language.factory("language_detector", func=get_lang_detector)
 
 nlp.add_pipe('language_detector', last=True)
 
-intents = json.loads(open('/Users/harshkesarwani/Desktop/Test/dataset/intents.json').read())
-words = pickle.load(open('/Users/harshkesarwani/Desktop/Test/proh/texts.pkl', 'rb'))
-classes = pickle.load(open('/Users/harshkesarwani/Desktop/Test/proh/labels.pkl', 'rb'))
+intents = json.loads(open(r'C:\Users\nisht\Sagacity-HealthBot\Sagacity-A-HealthBot\dataset\intents.json').read())
+words = pickle.load(open(r'C:\Users\nisht\Sagacity-HealthBot\Sagacity-A-HealthBot\proh\texts.pkl', 'rb'))
+classes = pickle.load(open(r'C:\Users\nisht\Sagacity-HealthBot\Sagacity-A-HealthBot\proh\labels.pkl', 'rb'))
 
 
 def clean_up_sentence(sentence):
@@ -78,8 +78,6 @@ def chatbot_response(msg):
     return res
 
 
-from flask import Flask, render_template, request
-
 app = Flask(__name__)
 app.static_folder = 'static'
 
@@ -102,6 +100,3 @@ def get_bot_response():
 
 if __name__ == "__main__":
     app.run()
-
-#pip install spacy-langdetect==0.1.2
-#python -m spacy download en_core_web_sm

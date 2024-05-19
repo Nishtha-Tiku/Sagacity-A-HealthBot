@@ -8,6 +8,9 @@ from keras.layers import Dense, Activation, Dropout
 from keras.optimizers import legacy as legacy_optimizers
 import random
 
+nltk.download('punkt')
+nltk.download('wordnet')
+
 # Initialize lemmatizer
 lemmatizer = WordNetLemmatizer()
 

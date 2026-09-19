@@ -1,36 +1,81 @@
-# Sagacity-A-HealthBot
+# Sagacity: A Mental Health Support Platform
+
+A digital platform for accessible, anonymous mental health support. A BERT-based NLP model runs behind a Flask backend and powers a React chatbot interface. The work is described in a co-authored, published research paper.
+
+## Highlights
+
+- BERT-based NLP model with an **F1-score of 0.86**
+- Model served through a **Flask** backend to a **React** chat frontend
+- Co-authored research paper *Mental Health Support Platform*, published in IJRAR (May 2024)
+- Built as an academic project, Sep 2023 to Jan 2024
+
+## Tech stack
+
+Python, BERT (Transformers), NLP, Flask, React
 
 ## Overview
 
-The Sagacity Mental Health Platform is a comprehensive digital solution designed to provide accessible, empathetic, and effective mental health support. This project aims to address the growing need for innovative mental health interventions by leveraging advanced technology to create a dynamic and safe virtual environment. The platform offers a range of services including anonymous accessibility, interactive support, resource hubs, institutional implementation applications, preventative and educational tools, and research and development applications.
+Sagacity aims to make mental health support easier to reach. It offers anonymous access, real-time chatbot support, and a resource hub, with tools for institutions and for prevention and education.
 
 ## Features
 
-### Patient-Centric Application
-###### Anonymous Accessibility: 
-Users can seek mental health support anonymously, providing a safe and confidential space.
-###### Interactive Support: 
-Personalized and adaptable support through real-time communication with chatbots and mental health specialists.
-###### Resource Hub: 
-Comprehensive repository of articles, self-help tools, and mental health resources.
-### Institutional Implementation Application
-###### Administrative Dashboard: 
-Effective management of mental health facilities through an administrative dashboard.
-###### Data Analytics: 
-Insights on user engagement, platform utilization, and overall effectiveness.
-###### Customizable Interface: 
-Seamless integration with existing healthcare systems and electronic health records (EHRs).
-### Preventative and Educational Tools Application
-###### Preventative Alerts: 
-Data analytics to identify early signs of mental health concerns and trigger preventative alerts.
-###### Educational Modules: 
-Modules on various mental health topics to promote awareness and proactive practices.
-###### Gamified Learning: 
-Gamified elements in educational modules to create an engaging learning experience.
+**For users**
+- Anonymous access to support in a safe, confidential space
+- Real-time interactive support through a chatbot
+- A hub of articles, self-help tools and resources
 
-## Installation
+**For institutions**
+- Administrative dashboard for managing facilities
+- Analytics on engagement and platform usage
+- Integration with existing healthcare systems
 
-### Prerequisites
-1. Python (for machine learning modules)
-2. React
-3. Flask
+**Prevention and education**
+- Alerts that flag early signs of concern
+- Educational modules on mental health topics
+
+## Repository structure
+
+| Folder | Contents |
+| ------ | -------- |
+| `chatbotFrontend/` | React chat interface |
+| `dataset/` | Data used to train and evaluate the model |
+| `proh/` | Flask backend (`main.py`), HTML templates and static files, trained chatbot model and embeddings (`model.h5`, `*.dump`, `*.pkl`), and the training notebooks (`chatbot.ipynb`, `TOC_QNA_CHATBOT (1).ipynb`) |
+
+## Getting started
+
+**Prerequisites:** Python 3.9+, Node.js 18+
+
+**Backend**
+
+```bash
+git clone https://github.com/Nishtha-Tiku/Sagacity-A-HealthBot.git
+cd Sagacity-A-HealthBot/proh
+pip install -r requirements.txt
+python main.py
+```
+
+**Frontend**
+
+```bash
+cd chatbotFrontend
+npm install
+npm start
+```
+
+The backend prints a local address in the terminal (Flask default is `http://127.0.0.1:5000`). Open it in your browser.
+
+## Results
+
+| Metric | Value |
+| ------ | ----- |
+| F1-score | 0.86 |
+
+## Publication
+
+*Mental Health Support Platform*, International Journal of Research and Analytical Reviews (IJRAR), published May 2024 (Paper ID: IJRARTH00219).
+
+Published Paper : https://drive.google.com/file/d/1ezjl3xHk-9R-VWVajx5WKdbGRMtmoXMj/view?usp=sharing
+
+## Disclaimer
+
+Sagacity is an academic project. It is not a substitute for professional mental health care. If you are in crisis, contact your local emergency number or a helpline in your country.
